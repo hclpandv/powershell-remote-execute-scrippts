@@ -1,0 +1,22 @@
+#---------------
+#---- Variables
+#---------------
+[string]$LogDir = "$env:USERPROFILE\ScriptLogs"
+[string]$LogFile = "$LogDir\SetupDevOpsBoxWin10.ps1.log"
+[Security.Principal.WindowsIdentity]$CurrentProcessToken = [Security.Principal.WindowsIdentity]::GetCurrent()
+[boolean]$IsAdmin = [boolean]($CurrentProcessToken.Groups -contains [Security.Principal.SecurityIdentifier]'S-1-5-32-544')
+[psobject]$envOS = Get-WmiObject -Class 'Win32_OperatingSystem' -ErrorAction 'SilentlyContinue'
+[string]$envOSName = $envOS.Caption.Trim()
+[boolean]$Is64Bit = [boolean]((Get-WmiObject -Class 'Win32_Processor' -ErrorAction 'SilentlyContinue' | Where-Object { $_.DeviceID -eq 'CPU0' } | Select-Object -ExpandProperty 'AddressWidth') -eq 64)
+[boolean]$ChocoInstalled = [boolean](Get-Command choco.exe -ErrorAction SilentlyContinue)
+$PreReqMsg = @"
+    Pre-Requisite for this setup
+    ----------------------------
+    * Adminstrative access to workstation    
+"@
+
+#---------------
+#---- Main
+#---------------
+
+Get-Content C:\Windows\System32\drivers\etc\hosts
