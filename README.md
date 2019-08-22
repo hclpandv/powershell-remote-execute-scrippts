@@ -11,6 +11,12 @@ Collection of usable PS funtions which can be executed remotly from this repo it
 ```powershell
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/hclpandv/powershell-remote-execute-scripts/master/vikiscripts.ps.funtions.ps1'))
 ```
+  OR  
+
+```powershell
+iex ((New-Object System.Net.WebClient).DownloadString('https://bit.ly/2NnlJlS'))
+```
+
 * Below new cmd-lets will be available for you
 
 ```
