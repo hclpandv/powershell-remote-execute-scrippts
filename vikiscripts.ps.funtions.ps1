@@ -1,4 +1,4 @@
-#------------------------
+#-------------------------
 # Function
 #-------------------------
 Function Get-NetworkStatistics 
@@ -47,3 +47,11 @@ Function Get-NetworkStatistics
         } 
     } 
 }
+
+#-------------------------
+# Function
+#-------------------------
+Function Get-HostEntries {
+  Get-Content C:\Windows\System32\drivers\etc\hosts
+}
+
