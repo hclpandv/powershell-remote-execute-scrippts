@@ -6,7 +6,7 @@ Function Get-NetworkStatistics
     $properties = 'Protocol','LocalAddress','LocalPort' 
     $properties += 'RemoteAddress','RemotePort','State','ProcessName','PID'
 
-    netstat -ano | Select-String -Pattern ‘\s+(TCP|UDP)’ | ForEach-Object {
+    netstat -ano | Select-String -Pattern '\s+(TCP|UDP)' | ForEach-Object {
 
         $item = $_.line.split(" ",[System.StringSplitOptions]::RemoveEmptyEntries)
 
