@@ -1,6 +1,6 @@
 # powershell-remote-execute-scripts
 
-Collection of usable PS scripts which can be executed remotly from this repo itself.
+Collection of usable PS funtions which can be executed remotly from this repo itself.
 
 * pre-requisites : You might need admin privilidges and  on machine where you are executing
 
@@ -11,4 +11,9 @@ Collection of usable PS scripts which can be executed remotly from this repo its
 ```powershell
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/hclpandv/powershell-remote-execute-scripts/master/vikiscripts.ps.funtions.ps1'))
 ```
-2. Test
+2. Below new cmd-lets will be available for you
+
+```
+Get-HostEntries
+Get-NetworkStatistics
+```
