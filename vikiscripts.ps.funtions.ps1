@@ -1,3 +1,11 @@
+#-----------------------
+# User Interface Element
+#-----------------------
+
+Write-Host "You are going to Install new PowerShell cmd-Lets provided by vikiscripts, it would take some time, please have patience" -For
+egroundColor Green
+
+
 #-------------------------
 # Function
 #-------------------------
@@ -157,5 +165,5 @@ Function Save-XlsAsCSV ([Parameter(Mandatory=$True)]$excelFile, [Parameter(Manda
     }
     $E.Quit()
 }
-Save-XlsAsCSV  -excelFile "C:\Temp\MyExcel.xlsx" -csvFile "C:\Temp\MyExcel.csv" 
+
 
