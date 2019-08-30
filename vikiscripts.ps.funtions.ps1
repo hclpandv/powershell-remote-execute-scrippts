@@ -74,6 +74,10 @@ Function Get-MsiDatabaseTable () {
         ValueFromPipelineByPropertyName=$True,
         HelpMessage='What is the path of the MSI you would like to query?')]
     [IO.FileInfo[]]$FilePath,
+    [Parameter(Mandatory=$True,
+        ValueFromPipeline=$True,
+        ValueFromPipelineByPropertyName=$True,
+        HelpMessage='Which MSI table you want to access?')]
     [string]$TableName
     )
  
