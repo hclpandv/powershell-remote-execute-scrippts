@@ -4,7 +4,6 @@
 
 Write-Host "You are going to Install new PowerShell cmd-Lets provided by vikiscripts, it would take some time, please have patience" -ForegroundColor Green
 
-
 #-------------------------
 # Function
 #-------------------------
@@ -151,7 +150,7 @@ Function Get-MsiDatabaseTable () {
 # Function
 #-------------------------
 
-Function Save-XlsAsCSV ([Parameter(Mandatory=$True)]$excelFile, [Parameter(Mandatory=$True)]$csvFile)
+Function Save-XlsAsCSV ([Parameter(Mandatory=$True)][IO.FileInfo[]]$excelFile, [Parameter(Mandatory=$True)][IO.FileInfo[]]$csvFile)
 {
     $E = New-Object -ComObject Excel.Application
     $E.Visible = $false
