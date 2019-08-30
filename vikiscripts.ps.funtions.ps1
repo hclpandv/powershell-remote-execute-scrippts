@@ -140,3 +140,22 @@ Function Get-MsiDatabaseTable () {
 #Usage Below
 #Get-MsiDatabaseTable -FilePath D:\2add14.msi -TableName "Directory"
 
+#-------------------------
+# Function
+#-------------------------
+
+Function Save-XlsAsCSV ([Parameter(Mandatory=$True)]$excelFile, [Parameter(Mandatory=$True)]$csvFile)
+{
+    $E = New-Object -ComObject Excel.Application
+    $E.Visible = $false
+    $E.DisplayAlerts = $false
+    $wb = $E.Workbooks.Open($excelFile)
+    foreach ($ws in $wb.Worksheets)
+    {
+        $n = $excelFile + "_" + $ws.Name
+        $ws.SaveAs($csvFile, 6)
+    }
+    $E.Quit()
+}
+Save-XlsAsCSV  -excelFile "C:\Temp\MyExcel.xlsx" -csvFile "C:\Temp\MyExcel.csv" 
+
