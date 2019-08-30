@@ -6,13 +6,13 @@ Collection of usable PS funtions which can be executed remotly from this repo it
 
 ### How It works ?
 
-* Load the `vikiscripts.ps.funtions.ps1` script in your PowerShell session, use below command
+1. Load the `vikiscripts.ps.funtions.ps1` script in your PowerShell session, use below command
 
 ```powershell
 iex ((New-Object System.Net.WebClient).DownloadString('https://bit.ly/2NnlJlS'))
 ```
 
-* Below new cmd-lets will be available for you
+2. Below new cmd-lets will be available for you
 
 ```
 Get-HostEntries
