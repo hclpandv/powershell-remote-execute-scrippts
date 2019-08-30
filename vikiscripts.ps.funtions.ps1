@@ -175,11 +175,11 @@ Function Save-XlsAsCSV (){
     $E = New-Object -ComObject Excel.Application
     $E.Visible = $false
     $E.DisplayAlerts = $false
-    $wb = $E.Workbooks.Open($excelFile)
+    $wb = $E.Workbooks.Open($XLSFilePath)
     foreach ($ws in $wb.Worksheets)
     {
         $n = $excelFile + "_" + $ws.Name
-        $ws.SaveAs($csvFile, 6)
+        $ws.SaveAs($CSVFilePath, 6)
     }
     $E.Quit()
 }
