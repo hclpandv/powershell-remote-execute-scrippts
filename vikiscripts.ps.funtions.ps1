@@ -159,8 +159,19 @@ Function Get-MsiDatabaseTable () {
 # Function
 #-------------------------
 
-Function Save-XlsAsCSV ([Parameter(Mandatory=$True)][IO.FileInfo[]]$excelFile, [Parameter(Mandatory=$True)][IO.FileInfo[]]$csvFile)
-{
+Function Save-XlsAsCSV (){
+    param (
+    [Parameter(Mandatory=$True,
+        ValueFromPipeline=$True,
+        ValueFromPipelineByPropertyName=$True,
+        HelpMessage='What XLS file you would like to save-as csv?')]
+    [IO.FileInfo[]]$XLSFilePath,
+    [Parameter(Mandatory=$True,
+        ValueFromPipeline=$True,
+        ValueFromPipelineByPropertyName=$True,
+        HelpMessage='Target path of CSV file?')]
+    [string]$CSVFilePath
+    )
     $E = New-Object -ComObject Excel.Application
     $E.Visible = $false
     $E.DisplayAlerts = $false
