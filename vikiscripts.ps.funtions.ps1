@@ -2,6 +2,15 @@
 # User Interface Element
 #-----------------------
 
+$Msg = @"
+    Below Cmd-Lets are now available for you
+    ----------------------------------------
+    * Get-NetworkStatistics
+    * Get-HostEntries
+    * Get-MsiDatabaseTable
+    * Save-XlsAsCSV
+"@
+
 Write-Host "You are going to Install new PowerShell cmd-Lets provided by vikiscripts, it would take some time, please have patience" -ForegroundColor Green
 
 #-------------------------
