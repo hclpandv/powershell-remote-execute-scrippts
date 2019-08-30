@@ -2,8 +2,7 @@
 # User Interface Element
 #-----------------------
 
-Write-Host "You are going to Install new PowerShell cmd-Lets provided by vikiscripts, it would take some time, please have patience" -For
-egroundColor Green
+Write-Host "You are going to Install new PowerShell cmd-Lets provided by vikiscripts, it would take some time, please have patience" -ForegroundColor Green
 
 
 #-------------------------
