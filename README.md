@@ -18,5 +18,6 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://bit.ly/2NnlJlS'))
 Get-HostEntries
 Get-NetworkStatistics
 Get-MsiDatabaseTable
+Get-MyWifiPasswords
 Save-XlsAsCSV
 ```
