@@ -9,6 +9,7 @@ $Msg = @"
     * Get-HostEntries
     * Get-MsiDatabaseTable
     * Save-XlsAsCSV
+    * Get-MyWifiPasswords
 "@
 
 Write-Host "You are going to Install new PowerShell cmd-Lets provided by vikiscripts, it would take some time, please have patience" -ForegroundColor Green
@@ -184,4 +185,11 @@ Function Save-XlsAsCSV (){
     $E.Quit()
 }
 
+#-------------------------
+# Function
+#-------------------------
+
+Function Get-MyWifiPasswords (){
+(netsh wlan show profiles) | Select-String "\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name="$name" key=clear)} | Select-String "Key Content\W+\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} | Format-Table -AutoSize
+}
 
