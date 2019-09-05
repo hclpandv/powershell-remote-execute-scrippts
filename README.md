@@ -2,7 +2,7 @@
 
 Collection of usable PS funtions which can be executed remotly from this repo itself.
 
-* pre-requisites : You might need admin privilidges and  on machine where you are executing
+* pre-requisites : You might need admin privilidges on the machine where you are executing
 
 ### How It works ?
 
