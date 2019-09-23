@@ -20,4 +20,5 @@ Get-NetworkStatistics
 Get-MsiDatabaseTable
 Get-MyWifiPasswords
 Save-XlsAsCSV
+* VIM editor can be invoked from WSL (Use vi <file_path>)
 ```
