@@ -199,6 +199,7 @@ Function Get-MyWifiPasswords (){
 #-------------------------
 Function vi ($File){
   write-host "If you have WSL Installed on your system, You can use VIM editor now"
-  $File = $File -replace “\\”, “/” -replace “ “, “\ “
-  bash -c “vi $File”
+  $File = $File -replace "\\", "/" -replace " ", "\ "
+  bash -c "vi $File"
 }
+
