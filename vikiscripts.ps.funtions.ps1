@@ -10,6 +10,7 @@ $Msg = @"
     * Get-MsiDatabaseTable
     * Save-XlsAsCSV
     * Get-MyWifiPasswords
+    * VIM editor can be invoked from WSL (Use vi <file_path>)
 "@
 
 Write-Host "You are going to Install new PowerShell cmd-Lets provided by vikiscripts, it would take some time, please have patience" -ForegroundColor Green
@@ -193,3 +194,11 @@ Function Get-MyWifiPasswords (){
 (netsh wlan show profiles) | Select-String "\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name="$name" key=clear)} | Select-String "Key Content\W+\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} | Format-Table -AutoSize
 }
 
+#-------------------------
+# Function
+#-------------------------
+Function vi ($File){
+  write-host "If you have WSL Installed on your system, You can use VIM editor now"
+  $File = $File -replace “\\”, “/” -replace “ “, “\ “
+  bash -c “vi $File”
+}
