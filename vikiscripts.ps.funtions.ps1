@@ -203,3 +203,16 @@ Function vi ($File){
   bash -c "vi $File"
 }
 
+#-------------------------
+# Function - MouseGiggle
+#-------------------------
+Function Fake-MyPresence{
+  param($minutes = 120)
+
+  $myshell = New-Object -com "Wscript.Shell"
+
+  for ($i = 0; $i -lt $minutes; $i++) {
+    Start-Sleep -Seconds 60
+    $myshell.sendkeys(".")
+  }
+}
