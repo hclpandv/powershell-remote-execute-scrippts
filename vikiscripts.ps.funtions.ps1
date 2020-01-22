@@ -10,6 +10,7 @@ $Msg = @"
     * Get-MsiDatabaseTable
     * Save-XlsAsCSV
     * Get-MyWifiPasswords
+    * Fake-MyPresence
     * VIM editor can be invoked from WSL (Use vi <file_path>)
 "@
 
