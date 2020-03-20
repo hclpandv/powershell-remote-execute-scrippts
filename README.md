@@ -1,4 +1,4 @@
-# powershell-remote-execute-scripts
+.# powershell-remote-execute-scripts
 
 Collection of usable PS funtions which can be executed remotly from this repo itself.
 
@@ -9,7 +9,8 @@ Collection of usable PS funtions which can be executed remotly from this repo it
 1. Load the `vikiscripts.ps.funtions.ps1` script in your PowerShell session, use below command
 
 ```powershell
-iex ((New-Object System.Net.WebClient).DownloadString('https://bit.ly/2NnlJlS'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;i
+ex ((New-Object System.Net.WebClient).DownloadString('https://bit.ly/2NnlJlS'))
 ```
 
 2. Below new cmd-lets will be available for you
