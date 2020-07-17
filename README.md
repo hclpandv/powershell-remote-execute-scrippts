@@ -1,4 +1,4 @@
-.# powershell-remote-execute-scripts
+# powershell-remote-execute-scripts
 
 Collection of usable PS funtions which can be executed remotly from this repo itself.
 
