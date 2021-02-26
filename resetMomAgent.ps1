@@ -1,6 +1,8 @@
-﻿<#
+<#
 .SYNOPSIS
-  To reset MOM agent on any server 
+  To reset MOM agent on any server
+.URI
+  https://bit.ly/2ZSxki0
 
 #>
 
