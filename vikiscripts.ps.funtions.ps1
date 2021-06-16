@@ -11,6 +11,7 @@ $Msg = @"
     * Save-XlsAsCSV
     * Get-MyWifiPasswords
     * Fake-MyPresence
+    * Disable-DefenderAntiSpyware
     * VIM editor can be invoked from WSL (Use vi <file_path>)
 "@
 
