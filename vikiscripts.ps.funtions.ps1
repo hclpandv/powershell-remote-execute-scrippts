@@ -217,3 +217,13 @@ Function Fake-MyPresence{
     $myshell.sendkeys(".")
   }
 }
+
+#----------------------------------------------------
+# Function - disable defender antimalware (sucks CPU)
+#----------------------------------------------------
+Function Disable-DefenderAntiSpyware{
+  New-ItemProperty -Path “HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender” -Name DisableAntiSpyware -Value 1 -PropertyType DWORD -Force
+}
+
+
+
