@@ -1,7 +1,6 @@
 <#
 .SYNOPSIS
-    Script uses azcopy and sas token uris to download media from Az storage blob
-    Invoke-RestMethod "https://dmtestsesydney.blob.core.windows.net/windowsupdate/Patch-VM.ps1?sp=r&st=2021-09-08T10:15:11Z&se=2021-09-10T18:15:11Z&spr=https&sv=2020-08-04&sr=b&sig=tmPD%2BKKN9bgX7DWGPvh%2BV%2F3jkYbrwvGCmU8Ktp5eLkQ%3D" | powershell
+    Script uses azcopy and sas token uris to download media from Az storage blob    
 #>
 
 #---------------
