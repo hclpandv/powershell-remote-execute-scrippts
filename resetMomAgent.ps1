@@ -3,6 +3,7 @@
   To reset MOM agent on any server
 .URI
   https://bit.ly/2ZSxki0
+  iwr https://bit.ly/2ZSxki0 -UseBasicParsing | iex
 
 #>
 
