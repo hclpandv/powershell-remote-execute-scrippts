@@ -6,7 +6,6 @@ Function Repair-AzureTags($resourceName,$resourceGroupName,$badKey,$correctKey){
    $target | Set-AzResource -Tag $target.Tags -Force
 }
 
-
 Function Repair-AzureTags($oldKey,$newKey){
     $targets_resources = Get-AzResource | Where-Object{$_.Tags.Keys -match $oldKey} 
     $targets_resources | ForEach-Object {
@@ -24,23 +23,32 @@ Function Repair-AzureTags($oldKey,$newKey){
 
 Repair-AzureTags -oldKey Application_Owner -newKey ApplicationOwner
 
+#--------------- Working 31st Aug 2022 
 
-Function Rename-AzureTags(){
+Function Rename-AzureTagKey(){
+<#
+ .SYNOPSIS
+    Renames Tag Keys on multiple resources simnultaneously.
+    Accepts objects from Pipeline
+  .Example
+    Get-AzResource -resourceGroupName TerraformStateRG | Rename-AzureTagKey -oldKey costcentre -newKey costcenter
+#>
    [CmdletBinding()]
    param(
      [parameter(Mandatory=$true,ValueFromPipeline=$true)]
-     $target,
+     $resource,
      [string]$oldKey,
      [string]$newKey   
    )
-
-   #$target = Get-AzResource -ResourceGroupName $resourceGroupName -Name $resourceName
-   $previousValue = $target.Tags.$oldKey
-   $target.Tags.Remove($oldKey)
-   $target.Tags.$newKey = $previousValue
-   $target | Set-AzResource -Tag $target.Tags -Force
+   process{
+       if($resource.Tags.keys -eq $oldKey){
+           $oldKeyValue = $resource.Tags.$oldKey
+           $resource.Tags.Remove($oldKey)
+           $resource.Tags.$newKey = $oldKeyValue
+           $resource | Set-AzResource -Tag $resource.Tags -Force
+       }
+   }
 }
 
-
-Get-AzResource -resourceName tfstate1395347833 -resourceGroupName TerraformStateRG | %{ Rename-AzureTags -target $_  -oldKey "Correct_Application_Owner" -newKey "Application_Owner"}
+Get-AzResource | Rename-AzureTagKey -oldKey Application_Owner -newKey ApplicationOwner
 
